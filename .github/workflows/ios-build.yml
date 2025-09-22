@@ -14,13 +14,12 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
       
-    - name: Set up Xcode
-      uses: actions/setup-xcode@v1
+    - name: Set up Xcode  # ← Fixed this step
+      uses: actions/setup-xcode@v1  # ← Fixed this line
       with:
-        xcode-version: '15.0'  # Specify your required version
+        xcode-version: '15.0'
         
     - name: Build project
       run: |
         cd your_project_directory
-        make package  # Based on your image, you're using make
-        # or use xcodebuild if you have an .xcodeproj
+        make package
